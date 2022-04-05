@@ -4,8 +4,7 @@ npm install
 # Correr proyecto: npm run dev
 
 # Crear .env
-configure the environment variables file for the operation of the API and the connection to the database
-
+configurar variables de entorno para la conexion a la BD y la configuracion del puerto del Api
 
 # Crear tablas en mysql DB database/migrations
 ## Comando para crear migraciones: 
