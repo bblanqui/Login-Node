@@ -1,8 +1,9 @@
 const express = require("express");
 const Router = express.Router()
-//controllers
+// importacion de controllers
 const {register, getUser, login} = require("./controller/userController")
 
+/* creacion de los endpoints */
 
 Router.post("/register", register)
 Router.get("/users", getUser)

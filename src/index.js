@@ -6,8 +6,10 @@ dotenv.config()
 const app = express()
 
 
+
 //import database 
-require('./models/index.js')  
+const { sequelize } = require('./models/index')
+ //require('./models/index.js')  
 //import routes
 
 const rutas = require('./routes')  
@@ -27,7 +29,14 @@ app.listen(app.get("port"), ()=>{
     console.log("servidor corriendo en http://localhost:" + app.get("port"))
    
   
-   
+    sequelize
+    .authenticate()
+    .then(() => {
+      console.log('DB Connected')
+    })
+    .catch(err => {
+      console.log('no se pudo conectar a la BD', err)
+    })
     
 })
 

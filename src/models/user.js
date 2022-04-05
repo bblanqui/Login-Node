@@ -14,14 +14,34 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING
+    name:{
+      type: DataTypes.STRING,
+        allowNull: false,
+    },
+    email: {
+      type:DataTypes.STRING,
+      unique: true,
+      validate: {
+        isEmail: {
+          msg: 'debe ser formato de email valido'
+        }
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: {
+            args: [6, 64],
+            msg: 'La contraseña debe tener al menos 6 caracteres'
+          }
+        }
+    }
   }, {
     sequelize,
     modelName: 'User',
-    timestamps:false,
-    createdAt:false
+    // timestamps:false,
+    // createdAt:false
 
   });
   return User;
