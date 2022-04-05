@@ -1,0 +1,24 @@
+{
+  "development": {
+    "user":"DB_NAME",
+    "password":null,
+    "database":"Login",
+    "dialect":"mssql",
+    "seederStorage": "sequelize",
+    "seederStorageTableName": "seeds",
+    "migrationStorage": "sequelize",
+    "migrationStorageTableName": "migrations"
+  },
+  "test": {
+    "username": "DB_NAME",
+    "password": null,
+    "database": "database_test",
+    "dialect": "mssql"
+  },
+  "production": {
+    "username": "DB_NAME",
+    "password": null,
+    "database": "DB_DATABASE",
+    "dialect": "mssql"
+  }
+}
